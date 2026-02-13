@@ -6,17 +6,19 @@ import {
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import AuthGuard from "./Auth/AuthGuard";
+import AuthGuard from "./auth/AuthGuard";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import CreatePost from "./pages/CreatePost";
+
 
 const DefaultRoute = () => {
   const loginData = JSON.parse(localStorage.getItem("loginData"));
   if (loginData) {
-    return <Navigate to="/Login" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
-  return <Navigate to="/Register" replace />;
+  return <Navigate to="/register" replace />;
 };
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
       element: <DefaultRoute />,
     },
     {
-      path: "/Login",
+      path: "/login",
       element: (
         <AuthGuard required={false}>
           <Login />
@@ -34,7 +36,7 @@ function App() {
       ),
     },
     {
-      path: "/Register",
+      path: "/register",
       element: (
         <AuthGuard required={false}>
           <Register />
@@ -42,13 +44,29 @@ function App() {
       ),
     },
     {
-      path: "/Dashboard",
+      path: "/dashboard",
       element: (
         <AuthGuard required={true}>
           <Dashboard />
         </AuthGuard>
       ),
     },
+    {
+      path: "/create-post",
+      element: (
+        <AuthGuard required={true}>
+          <CreatePost />
+        </AuthGuard>
+      ),
+    },
+    {
+      path: "/create-post/:id",
+      element: (
+        <AuthGuard required={true}>
+          <CreatePost />
+        </AuthGuard>
+      ),
+    }
   ]);
 
   return (
