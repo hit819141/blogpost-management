@@ -128,17 +128,17 @@ const CreatePost = () => {
   /* VALIDATION */
   const validateForm = () => {
     if (!formData.title.trim()) {
-      toast.error("Post title required 🚨");
+      toast.error("Post title required");
       return false;
     }
 
     if (!formData.description.trim()) {
-      toast.error("Description required 🚨");
+      toast.error("Description required");
       return false;
     }
 
     if (!previewImage) {
-      toast.error("Post image required 🚨");
+      toast.error("Post image required");
       return false;
     }
 
@@ -188,11 +188,11 @@ const CreatePost = () => {
 
       if (!response.ok) throw new Error("Save failed");
 
-      toast.success(id ? "Post Updated ✏️" : "Post Published 🚀");
+      toast.success(id ? "Post Updated" : "Post Published");
       navigate("/dashboard");
     } catch (error) {
       console.error("Save Error:", error);
-      toast.error("Error saving post 🚨");
+      toast.error("Error saving post");
     }
   };
 
@@ -290,7 +290,7 @@ const CreatePost = () => {
     handleFileSelect(file);
   };
 
-  /* ✅ REMOVE IMAGE */
+  /*REMOVE IMAGE */
   const handleRemoveImage = () => {
     setPreviewImage("");
     setImageError(false);
@@ -298,7 +298,7 @@ const CreatePost = () => {
     setShowUploadArea(true);
   };
 
-  /* ✅ HANDLE TAB CHANGE */
+  /* HANDLE TAB CHANGE */
   const handleTabChange = (tab) => {
     setActiveTab(tab);
     setImageError(false);
@@ -465,7 +465,7 @@ const CreatePost = () => {
                   </div>
                   {imageError && (
                     <p style={{ color: '#f59e0b', fontSize: '0.875rem', marginTop: '0.5rem' }}>
-                      ⚠️ Using fallback image (original URL could not be loaded)
+                     Using fallback image (original URL could not be loaded)
                     </p>
                   )}
                 </div>
