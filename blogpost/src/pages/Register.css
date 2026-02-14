@@ -4,16 +4,21 @@
   margin: 0;
   padding: 0;
 }
-.register-wrapper {
+
+body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  width: 100%;
+  margin: 0;
+}
+.register-page {
+  min-height: 100vh;
   background: linear-gradient(135deg, #a10dd2, #2a5298);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
+
 
 /* Form Container        */
 
@@ -38,7 +43,7 @@
   color: #781389;
   font-size: 28px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 30px;
 }
 
 .form-container h5 {

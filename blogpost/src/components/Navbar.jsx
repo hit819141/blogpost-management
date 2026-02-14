@@ -2,10 +2,11 @@ import { FaBlog, FaHome, FaPlusSquare, FaSignOutAlt } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
+
 const Navbar = ({ onLogout }) => {
   // Get user email from localStorage to display
   const loginData = JSON.parse(localStorage.getItem("loginData") || "{}");
-  const userName = loginData?.username || "User";
+const userName = loginData?.username || "User";
 
 
   return (
@@ -24,6 +25,7 @@ const Navbar = ({ onLogout }) => {
           <NavLink to="/create-post" className="nav-item">
             <FaPlusSquare className="nav-icon" /> Create Post
           </NavLink>
+
         </div>
 
         <div className="navbar-actions">
