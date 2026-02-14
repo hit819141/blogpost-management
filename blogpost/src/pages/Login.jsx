@@ -40,10 +40,10 @@ const handleSubmit = (e) => {
   e.preventDefault();
   if (!validate()) return;
 
-  // 🔹 Get all registered users
+  //Get all registered users
   const users = JSON.parse(localStorage.getItem("authData")) || [];
 
-  // 🔹 Find matching user
+  //Find matching user
   const matchedUser = users.find(
     (user) =>
       user.email === loginData.email &&
@@ -65,10 +65,6 @@ const handleSubmit = (e) => {
     toast.error("Invalid email or password");
   }
 };
-
-
-
-
   return (
     <div className="register-page">
     <div className="form-container">

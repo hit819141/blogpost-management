@@ -146,17 +146,17 @@ body {
 }
 
 .post-image-container {
-  height: 200px;
   width: 100%;
-  overflow: hidden;
   position: relative;
 }
-.post-card image {
+
+.post-card-image {
   width: 100%;
-  height: 200%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  height: auto;
+  object-fit: contain;   /* Full image show */
+  display: block;
 }
+
 
 .post-card:hover .post-image-container image {
   transform: scale(1.1);

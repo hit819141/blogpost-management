@@ -64,10 +64,6 @@ import { useEffect, useState } from "react";
     toast.error("Failed to delete post");
   }
 };
-
-
-
-
     // Get current user from localStorage
   const loginData = JSON.parse(localStorage.getItem("loginData") || "{}");
   const currentUser = loginData?.username || "User";
