@@ -1,4 +1,4 @@
-import { FaBlog, FaHome, FaPlusSquare, FaSignOutAlt } from "react-icons/fa";
+import { FaBlog, FaChartBar, FaHome, FaPlusSquare, FaSignOutAlt } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
@@ -26,6 +26,9 @@ const userName = loginData?.username || "User";
             <FaPlusSquare className="nav-icon" /> Create Post
           </NavLink>
 
+          <NavLink to="/Analytics" className="nav-item">
+            <FaChartBar className="nav-icon" /> Analytics
+          </NavLink>
         </div>
 
         <div className="navbar-actions">

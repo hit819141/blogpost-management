@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
   import { toast } from "react-toastify";
   import Navbar from "../components/Navbar";
   import "./Dashboard.css";
+  import "./PostDetails.css";
 
   const Dashboard = () => {
     const navigate = useNavigate();
@@ -64,6 +65,10 @@ import { useEffect, useState } from "react";
     toast.error("Failed to delete post");
   }
 };
+
+
+
+
     // Get current user from localStorage
   const loginData = JSON.parse(localStorage.getItem("loginData") || "{}");
   const currentUser = loginData?.username || "User";
@@ -161,7 +166,8 @@ import { useEffect, useState } from "react";
                       <p className="post-card-description">
                         {post.description || post.content || post.excerpt}
                       </p>
-                      <button className="read-more-btn">Read More</button>
+                      <button className="read-more-btn"
+                      onClick={() => navigate(`/PostDetails/${post.id}`)}>Read More</button>
                     </div>
                   </div>
                 ))
